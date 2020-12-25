@@ -4,6 +4,7 @@ const cors = require('cors');
 const { v4: uuidv4 } = require('uuid');
 const process = require('process');
 const bcrypt = require('bcrypt');
+const argon2 = require('argon2');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
@@ -31,7 +32,8 @@ const User = mongoose.model('customer', {
 
 //create new user
 app.post('/customers', async (req, res) => {
-    req.body.password = await bcrypt.hash(req.body.password, 12);
+    // req.body.password = await bcrypt.hash(req.body.password, 12);
+    req.body.password = await argon2.hash(req.body.password);
     try {
         const data = await User.create(req.body);
         res.json(data);
@@ -74,7 +76,7 @@ app.get('/customers', async (req, res) => {
 //retrive the userlist
 app.get('/users/:id', async (req, res) => {
     try {
-        const data = await User.findOne({id: req.params.id});
+        const data = await User.findOne({ id: req.params.id });
         res.json(data)
     }
     catch (error) {
