@@ -50,7 +50,8 @@ app.post('/login', async (req, res) => {
         if (!customer) {
             return res.status(401).json({ message: 'Invalid Credentials' });
         }
-        const iscorrect = await bcrypt.compare(req.body.password, customer.password);
+        // const iscorrect = await bcrypt.compare(req.body.password, customer.password);
+        const iscorrect = await argon2.verify(customer.password, req.body.password);
         if (!iscorrect) {
             return res.status(401).json({ message: 'Invalid Credentials' });
         }
