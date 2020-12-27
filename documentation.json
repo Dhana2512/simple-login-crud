@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "5b10fb14-23a0-4bde-a4c3-3f5e0a273906",
+		"name": "Crud app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customers API",
+			"item": [
+				{
+					"name": "post API",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "prakash@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "prakash",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete API",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI1ZmU3NGM5MGIxMzMzNTBhYzQ2NjYyZjAiLCJlbWFpbCI6ImRoYW5hbGFrc2htaUBnbWFpbC5jb20iLCJpYXQiOjE2MDkwNzg3NDcsImV4cCI6MTYwOTEyMTk0N30.Aj_BwJ8wszpvlHnqWZd0e29mfDw9EODsTR6eh4jxLwo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "dhanalakshmi@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "dhana",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/customers/f1909035-54bf-4cdc-b3eb-3bf70079b409",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"customers",
+								"f1909035-54bf-4cdc-b3eb-3bf70079b409"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put API",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI1ZmU4OWFhZjBiMzUyZDAzOWM1NzQwNDgiLCJlbWFpbCI6InByYWthc2hAZ21haWwuY29tIiwiaWF0IjoxNjA5MDc5NTY1LCJleHAiOjE2MDkxMjI3NjV9.ZF2y08PMabHoLj9-ByCzrCRidLfpUm6SZHxtrnL2hpk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "prakashdhana@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "prakash",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/customers/7c21f7e7-e4ef-4d90-937e-00636b463f71",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"customers",
+								"7c21f7e7-e4ef-4d90-937e-00636b463f71"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login API",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "prakash@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "prakash",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get API",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOiI1ZmU4OWFhZjBiMzUyZDAzOWM1NzQwNDgiLCJlbWFpbCI6InByYWthc2hAZ21haWwuY29tIiwiaWF0IjoxNjA5MDc5NTY1LCJleHAiOjE2MDkxMjI3NjV9.ZF2y08PMabHoLj9-ByCzrCRidLfpUm6SZHxtrnL2hpk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "dhanalakshmi@gma",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "dhana",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:4000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
