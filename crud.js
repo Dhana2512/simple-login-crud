@@ -26,9 +26,8 @@ const User = mongoose.model('customer', {
 
 //create new user
 app.post('/customers', async (req, res) => {
-    // req.body.password = await bcrypt.hash(req.body.password, 12);
-    req.body.password = await passwordServ.hash(req.body.password);
     try {
+        req.body.password = await passwordServ.hash(req.body.password);
         const data = await User.create(req.body);
         res.json(data);
     } catch (error) {
@@ -63,11 +62,11 @@ app.post('/login', async (req, res) => {
 })
 
 //retrive the userlist
-app.get('/users', async (req, res) => {
+app.get('/customers', async (req, res) => {
     try {
-        const isAuthorized = await verifyToken(req.headers.authorization);
-        const data = await User.find({  });
-        res.json(data)
+        // const isAuthorized = await verifyToken(req.headers.authorization);
+        const data = await User.find({ }, { password: 0});
+        res.status(200).json(data)
     } catch (error) {
         return res.status(401).json({ message: 'Unauthorised user.. please login to access the api' });
     };

@@ -2,7 +2,7 @@
 const bcrypt = require('bcrypt');
 const argon2 = require('argon2');
 
-const hash = (plainPassword) => {
+const hash = async (plainPassword) => {
     return argon2.hash(plainPassword);
     //    return bcrypt.hash(plainPassword, 12);
 }
